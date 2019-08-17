@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iris Classifier API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+  </head>
+  <body>
+    <section class="hero is-primary is-bold is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="media-left">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="static/img/iris.jpg" alt="Iris flower">
+            </figure>
+          </div>
+          <h1 class="title">
+            Iris Classifier API
+          </h1>
+          <h2 class="subtitle">
+            Try it out:
+          </h2>
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <pre><code class="python">import requests
+
+# Set metadata:
+headers = {'Content-type': 'application/json'}
+input_values = {
+    # Edit and try with your own data:
+    'sepal_length': 7.7,
+    'sepal_width': 2.8,
+    'petal_length': 6.7,
+    'petal_width': 2.0
+}
+
+# Get response:
+response = requests.post('http://127.0.0.1:5000/api/v0.0/predict',
+                         headers=headers, 
+                         json=input_values)
+
+# If response's status is 200:
+if response.status_code == requests.codes.ok:
+      # Pretty print response:
+      pprint(response.json())</code></pre>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="github" href="https://github.com/RodolfoFerro/" target="_blank">
+                      <span class="icon is-medium">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="level-item" aria-label="twitter" href="https://twitter.com/FerroRodolfo/" target="_blank">
+                      <span class="icon is-medium">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="level-item" aria-label="linkedin" href="https://www.linkedin.com/in/rodolfoferro/" target="_blank">
+                      <span class="icon is-medium">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

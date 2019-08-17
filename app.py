@@ -14,7 +14,7 @@
 # ===============================================================
 
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from iris import iris_classifier
 from pprint import pprint
 import numpy as np
@@ -32,6 +32,12 @@ species = {
     '1': 'I. versicolor',
     '2': 'I. virginica'
 }
+
+
+# Static website:
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 
 # API MAIN STRUCTURE:
