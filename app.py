@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # ===============================================================
 # Author: Rodolfo Ferro
 # Email: ferro@cimat.mx
@@ -11,7 +13,6 @@
 # its conditions.
 # ===============================================================
 
-# -*- coding: utf-8 -*-
 
 from flask import Flask, jsonify, request
 from iris import iris_classifier
