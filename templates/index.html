@@ -28,7 +28,8 @@
             <article class="media">
               <div class="media-content">
                 <div class="content">
-                  <pre><code class="python">import requests
+                  <pre><code class="python">from pprint import pprint
+import requests
 
 # Set metadata:
 headers = {'Content-type': 'application/json'}
@@ -41,7 +42,7 @@ input_values = {
 }
 
 # Get response:
-response = requests.post('http://127.0.0.1:5000/api/v0.0/predict',
+response = requests.post('https://rodolfoferro-iris-api.glitch.me/api/v0.0/predict',
                          headers=headers, 
                          json=input_values)
 
